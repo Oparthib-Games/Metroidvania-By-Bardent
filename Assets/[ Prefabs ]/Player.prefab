@@ -135,11 +135,12 @@ GameObject:
   - component: {fileID: 8222207406708910208}
   - component: {fileID: 8222207406708910221}
   - component: {fileID: 2008469761863499243}
+  - component: {fileID: 4458954909981644198}
   - component: {fileID: 8222207406708910209}
   - component: {fileID: 8222207406708910210}
   - component: {fileID: 8222207406708910211}
   - component: {fileID: 8222207406708910220}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -154,7 +155,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8222207406708910214}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.25, y: 6.07, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -177,6 +178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93d9122fbd98be941a0fd2188fda0405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knockbackDuration: 0.2
+  knockbackSpeed: {x: 5, y: 3}
   movementSpeed: 10
   jumpForce: 15
   groundCheckRadius: 0.3
@@ -194,7 +197,7 @@ MonoBehaviour:
   dashTime: 0.2
   dashSpeed: 20
   distanceBetweenImages: 0.1
-  dashCoolDown: 2.5
+  dashCoolDown: 1
   ledgeClimbXOffset1: 0.3
   ledgeClimbYOffset1: 0
   ledgeClimbXOffset2: 0.5
@@ -222,11 +225,26 @@ MonoBehaviour:
   attack1HitBoxPos: {fileID: 725900481}
   damageableLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   attack1Radius: 1
   attack1Damage: 4
   inputTimer: 0.2
   combatEnabled: 1
+--- !u!114 &4458954909981644198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8222207406708910214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5296547514449b24184a717047954859, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 50
+  deathChunkParticle: {fileID: 6806625082995372562, guid: 96abf770a4bb86949b5e2353eb73c445, type: 3}
+  deathBloodParticle: {fileID: 2315197348273772096, guid: 34a07ca8fda036e488b1dbef233f8aac, type: 3}
 --- !u!212 &8222207406708910209
 SpriteRenderer:
   m_ObjectHideFlags: 0

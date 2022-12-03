@@ -49,10 +49,10 @@ public class CombatDummy : MonoBehaviour
         checkKnokback();
     }
 
-    private void Damage(float amount)
+    private void Damage(float[] attackDetails)
     {
         print("Damage");
-        currHealth -= amount;
+        currHealth -= attackDetails[0];
         playerFacingDirection = playerCtrl.GetFacingDirection();
 
         Instantiate(hitParticle, aliveGO.transform.position, Quaternion.Euler(0, 0, Random.Range(0, 360f)));

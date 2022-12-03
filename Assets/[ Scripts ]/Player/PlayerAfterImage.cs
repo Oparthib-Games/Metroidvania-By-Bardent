@@ -11,7 +11,7 @@ public class PlayerAfterImage : MonoBehaviour
     [SerializeField]
     private float alphaSet = 0.8f;
     [SerializeField]
-    private float alphaMultiplier = 1f;
+    private float alphaDecay = 0.85f;
 
     private Transform player;
 
@@ -36,7 +36,7 @@ public class PlayerAfterImage : MonoBehaviour
 
     private void Update()
     {
-        alpha *= alphaMultiplier;
+        alpha -= alphaDecay * Time.deltaTime;
         color = new Color(1, 1, 1, alpha);
         SR.color = color;
 
