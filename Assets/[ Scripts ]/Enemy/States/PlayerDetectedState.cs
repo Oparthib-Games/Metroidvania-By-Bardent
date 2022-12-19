@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveState : State
+public class PlayerDetectedState : State
 {
-    protected D_MoveState stateData;
+    protected D_PlayerDetected stateData;
 
-    protected bool isDetectingWall;
-    protected bool isDetectingLedge;
     protected bool isPlayerInMinAgroRange;
     protected bool isPlayerInMaxAgroRange;
+    protected bool performLongRangeAction;
+    protected bool performCloseRangeAction;
 
-    public MoveState(FiniteStateMachine stateMachine, Entity entity, string animBoolName, D_MoveState stateData) : base(stateMachine, entity, animBoolName)
+    public PlayerDetectedState(FiniteStateMachine stateMachine, Entity entity, string animBoolName, D_PlayerDetected stateData) : base(stateMachine, entity, animBoolName)
     {
         this.stateData = stateData;
     }
@@ -20,16 +20,17 @@ public class MoveState : State
     {
         base.DoChecks();
 
-        isDetectingWall = entity.CheckWall();
-        isDetectingLedge = entity.CheckLedge();
         isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
         isPlayerInMaxAgroRange = entity.CheckPlayerInMaxAgroRange();
+
+        performCloseRangeAction = entity.CheckPlayerInCloseRangeAction();
     }
 
     public override void Enter()
     {
         base.Enter();
-        entity.SetVelocity(stateData.movementSpeed);
+        entity.SetVelocity(0);
+        performLongRangeAction = false;
     }
 
     public override void Exit()
@@ -40,6 +41,11 @@ public class MoveState : State
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        if(Time.time >= startTime + stateData.longRangeActionTime)
+        {
+            performLongRangeAction = true;
+        }
     }
 
     public override void PhysicsUpdate()

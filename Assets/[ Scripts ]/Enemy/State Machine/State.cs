@@ -24,6 +24,8 @@ public class State
         entity.ANIM.SetBool(animBoolName, true);
 
         Debug.Log($"Entering State => {animBoolName}");
+
+        DoChecks();
     }
     public virtual void LogicUpdate()
     {
@@ -31,10 +33,15 @@ public class State
     }
     public virtual void PhysicsUpdate()
     {
-
+        DoChecks();
     }
     public virtual void Exit()
     {
         entity.ANIM.SetBool(animBoolName, false);
+    }
+
+    public virtual void DoChecks()
+    {
+
     }
 }

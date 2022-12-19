@@ -20,7 +20,7 @@ public class PlayerCombat : MonoBehaviour
 
     private float lastInputTime = Mathf.NegativeInfinity;
 
-    private float[] attackDetails = new float[2];
+    private AttackDetails attackDetails;
 
     private Animator ANIM;
 
@@ -69,15 +69,15 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
-    public void Damage(float[] attackDetails)
+    public void Damage(AttackDetails attackDetails)
     {
         if (this.GetComponent<PlayerCtrl>().GetDashStatus()) return;
 
         int damageDirection;
 
-        this.GetComponent<PlayerStats>().DecreaseHealth(attackDetails[0]);
+        this.GetComponent<PlayerStats>().DecreaseHealth(attackDetails.damageAmount);
 
-        if (attackDetails[1] > transform.position.x)
+        if (attackDetails.position.x > transform.position.x)
         {
             damageDirection = -1;
         }
@@ -93,8 +93,8 @@ public class PlayerCombat : MonoBehaviour
     {
         Collider2D[] detectedObjects = Physics2D.OverlapCircleAll(attack1HitBoxPos.position, attack1Radius, damageableLayer);
 
-        attackDetails[0] = attack1Damage;
-        attackDetails[1] = transform.position.x;
+        attackDetails.damageAmount = attack1Damage;
+        attackDetails.position = transform.position;
 
         foreach (Collider2D collider in detectedObjects)
         {
