@@ -33120,59 +33120,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!1 &1800087099
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1800087100}
-  m_Layer: 7
-  m_Name: Melee Attack Pos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1800087100
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1800087099}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.92, y: -0.49, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2024981293}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2024981292 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3174251392188022634, guid: ae81fd7350ec3574f9bd544597059191, type: 3}
-  m_PrefabInstance: {fileID: 3174251392932712452}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &2024981293 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3174251392188022635, guid: ae81fd7350ec3574f9bd544597059191, type: 3}
-  m_PrefabInstance: {fileID: 3174251392932712452}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2024981298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2024981292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b0bbd832c8725d4e80bbcf3f9cf8643, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3174251392932712452
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33224,61 +33171,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3174251391987075417, guid: ae81fd7350ec3574f9bd544597059191, type: 3}
-      propertyPath: touchDamage
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3174251391987075417, guid: ae81fd7350ec3574f9bd544597059191, type: 3}
-      propertyPath: touchDamageCooldown
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 3174251391987075422, guid: ae81fd7350ec3574f9bd544597059191, type: 3}
       propertyPath: m_Name
       value: Enemy [Dog]
       objectReference: {fileID: 0}
-    - target: {fileID: 3174251392037443521, guid: ae81fd7350ec3574f9bd544597059191, type: 3}
-      propertyPath: m_Name
-      value: Ledge & Wall Check
-      objectReference: {fileID: 0}
-    - target: {fileID: 3174251392188022645, guid: ae81fd7350ec3574f9bd544597059191, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: 8f76de9b28c274e419057df08e66fbe6, type: 2}
-    m_RemovedComponents:
-    - {fileID: 3174251391987075417, guid: ae81fd7350ec3574f9bd544597059191, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae81fd7350ec3574f9bd544597059191, type: 3}
---- !u!1 &3174251392932712453 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3174251391987075422, guid: ae81fd7350ec3574f9bd544597059191, type: 3}
-  m_PrefabInstance: {fileID: 3174251392932712452}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &3174251392932712454 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3174251392037443522, guid: ae81fd7350ec3574f9bd544597059191, type: 3}
-  m_PrefabInstance: {fileID: 3174251392932712452}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3174251392932712455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3174251392932712453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a13b0e71dfce794d94a9fee3ce80a9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  entityData: {fileID: 11400000, guid: de6644a45e8e5594ca9887fe45797a8f, type: 2}
-  wallCheck: {fileID: 3174251392932712454}
-  ledgeCheck: {fileID: 3174251392932712454}
-  idleStateData: {fileID: 11400000, guid: 1e1ffbeef0408664691d16fae4ddcf0f, type: 2}
-  moveStateData: {fileID: 11400000, guid: 943526d0a272414498ad99d2a2bdd117, type: 2}
-  playerDetectedStateData: {fileID: 11400000, guid: 1929b97b989da4e49abab198a4a6d2d3, type: 2}
-  chargeStateData: {fileID: 11400000, guid: 1d62066d4020ea7498dbe47ee87ef164, type: 2}
-  lookForPlayerStateData: {fileID: 11400000, guid: dc9d461538b543146a54d54180fd5a55, type: 2}
-  meleeAttackStateData: {fileID: 11400000, guid: 0714aa31a3be3284282a1e868c67cb79, type: 2}
-  meleeAttackPosition: {fileID: 1800087100}
 --- !u!1001 &7071721641043010543
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33343,10 +33241,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2008469761863499243, guid: 613f06146b1c6874aac02d05865606f6, type: 3}
-      propertyPath: maxHealth
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 8222207406708910208, guid: 613f06146b1c6874aac02d05865606f6, type: 3}
       propertyPath: m_RootOrder
       value: 3
